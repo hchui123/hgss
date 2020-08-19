@@ -1,0 +1,57 @@
+<!--pages/personal/personal.wxml-->
+
+<view wx:if="{{!userInfo && canIUse}}">
+  <view class="padding text-center shadow-xl margin-tb" style="margin-top:20%">
+    <view class="cu-avatar xl round padding-tb margin-tb" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);">
+    </view>
+    <view class="margin-tb">
+      <button type="primary" plain open-type="getUserInfo" bindgetuserinfo="getInfo">登录</button>
+    </view>
+  </view>
+</view>
+
+<view wx:else>
+<view class="padding text-center shadow-xl text-white" style="background-color:#dd3333">
+  <view class="cu-avatar xl round padding-tb margin-tb" style="background-image:url({{userInfo.avatarUrl}});">
+  <view class="cu-tag badge {{userInfo.gender%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+  </view>
+  <view class="margin-bottom">
+    <view class="text-">{{userInfo.nickName}}</view>
+    <view></view>
+  </view>
+</view>
+
+
+
+<view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../record/record?title=homework">
+      <text class="cuIcon-edit text-red"></text>
+      <text class="text-grey">作业记录</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" hover-class="none" url="../record/record?title=studywork">
+      <text class="cuIcon-read text-orange"></text>
+      <text class="text-grey">学习记录</text>
+    </navigator>
+  </view>
+</view>
+
+<view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-item arrow">
+    <button class="cu-btn content" open-type="feedback">
+      <text class="cuIcon-write text-olive"></text>
+      <text class="text-grey">提点意见</text>
+    </button>
+  </view>
+</view>
+
+</view>
+
+<!-- 鸣谢 -->
+<view class="bg-white padding text-center text-gray" style="position:fixed;bottom:0;left:0;right:0;">
+    <view>感谢：腾讯、colorUI提供支持</view>
+</view>
+
+

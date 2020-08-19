@@ -1,0 +1,18 @@
+<!--pages/detail/detail.wxml-->
+<scroll-view scroll-y="true" scroll-with-animation="true" scroll-top="{{scrollTop}}"  class="container">
+  <view class="content padding">
+    <block wx:for="{{lyricList}}" wx:key="lyric">
+      <view class="flex justify-center lyric {{index == wordTime ? 'addColor' :''}}">
+        {{item.word}}
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+
+<!-- 控制暂停和上下首 -->
+<view class="controller flex justify-center align-center">
+   <text class="cuIcon-backwardfill" bindtap="prev"></text>
+   <text class="cont {{isPlaying ? 'cuIcon-playfill' : 'cuIcon-stop'}} margin-lr" bindtap="play"></text>
+   <text class="cuIcon-play_forward_fill" bindtap="next"></text>
+</view>

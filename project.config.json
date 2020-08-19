@@ -1,0 +1,83 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"packNpmManually": false,
+		"packNpmRelationList": []
+	},
+	"appid": "wxe2526975bf07fe7c",
+	"projectname": "test0814",
+	"libVersion": "2.11.2",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/personal/personal",
+					"pathName": "pages/personal/personal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/swWork/swWork",
+					"pathName": "pages/swWork/swWork",
+					"scene": null
+				}
+			]
+		}
+	}
+}

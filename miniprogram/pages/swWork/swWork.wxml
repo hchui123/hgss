@@ -1,0 +1,88 @@
+<!--pages/swWork/swWork.wxml-->
+
+<view wx:if="{{!isSwWork}}">
+<view class="text-gray bg-white padding-left" style="position:fixed;height:80rpx;line-height:80rpx;top:0;left:0;right:0;z-index:1">
+   <text>练习时间倒计时：</text>
+   <text class="text-red">{{countDown}}</text>
+</view>
+
+
+<!-- 循环出每道题 -->
+<view class="container">
+<block wx:for="{{workList}}" wx:key="work">
+   <view class="bg-white margin-tb-sm padding radius">
+   <view class="margin-bottom text-lg">
+      {{index+1}}、{{item.title}}
+   </view>
+
+   <!-- 如果题意中有图片，则循环显示图片 -->
+   <block wx:if="{{item.image}}">
+      <image src="{{item.image}}" mode="widthFix"></image>
+   </block>
+
+
+      <!-- 如果是选项，则循环选项 -->
+      <view wx:if="{{item.options}}">
+      <radio-group class="block" bindchange="getRadio" data-answer="{{item.answer}}">
+            <label wx:for="{{item.options}}" wx:key="option">
+               <view class="cu-form-group">
+                 <view class="title solid-bottom" style="height:100%">{{item}}</view>
+                 <radio value="{{index}}"></radio>
+               </view>
+             </label>
+      </radio-group>
+      </view>
+
+      <!-- 如果不是选项，是填空题，则循环出填空的信息 -->
+      <view wx:if="{{item.content.length}}">
+         <block wx:for="{{item.content}}" wx:key="cont">
+           <view style="line-height:1.5em;font-weight: bold;letter-spacing:4rpx;" class="margin-tb">{{item}}</view>
+         </block>
+         <view class="cu-form-group margin-top">
+           <textarea maxlength="-1" class="solid-bottom" bindinput="getTextInput" placeholder="输入上题答案"></textarea>
+         </view>
+       </view>
+
+   <!-- 查看解析 -->
+   <view class="flex justify-end align-center text-gray" hidden="{{!isShowParse}}" bindtap="showModal" data-target="{{index}}">
+      <text class="cuIcon-creative margin-right-sm"></text> 查看解析
+   </view>
+
+   <!-- 解析的内容 -->
+   <view class="cu-modal bottom-modal {{modalName == index ?'show':''}}">
+      <view class="cu-dialog">
+        <view class="cu-bar bg-white">
+          <view class="action text-green">求助</view>
+          <view class="action text-blue" bindtap="hideModal">懂了</view>
+        </view>
+        <view class="padding-xl">
+          <block wx:for="{{item.parse}}" wx:key="parse">
+            <view class="text-left margin-bottom-sm">{{item}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+   </view>
+</block>
+
+<!-- 提交按钮 -->
+<view class="padding flex flex-direction bg-white">
+  <button class="cu-btn bg-red margin-tb-sm lg" disabled="{{isdisabled}}" bindtap="getValue">{{submitContent}}</button>
+</view>
+
+</view>
+</view>
+
+<view wx:else>
+   <view class="bg-white padding margin text-center text-gray">
+       <text>还没有发布练习！</text>
+   </view>
+</view>
+
+
+
+
+
+
+
+

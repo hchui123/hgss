@@ -1,0 +1,25 @@
+<!--pages/article/article.wxml-->
+<view class="bg-white padding margin">
+
+   <!-- 标题信息 -->
+   <view class="margin-tb text-center">
+      <view class="text-lg margin-tb">{{articleInfo.title}}</view>
+      <view class="text-gray">
+        <text>来源：{{articleInfo.source}}</text>
+        <text class="margin-left">时间：{{articleInfo.createTime}}</text>
+      </view>
+   </view>
+
+   <!-- 图片 -->
+   <view class="text-center margin-tb-sm">
+     <image src="{{articleInfo.url}}" mode="aspectFill" class="image radius" style="height:240rpx;"></image>
+   </view>
+   
+   <!-- 内容 -->
+   <view class="margin-tb">
+      <block wx:for="{{articleInfo.content}}" wx:key="content">
+        <view class="margin-tb-sm">{{item}}</view>
+      </block>
+   </view>
+
+</view>

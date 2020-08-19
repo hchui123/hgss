@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/course/course",
+    "pages/article/article",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/swWork/swWork",
+    "pages/personal/personal",
+    "pages/record/record"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#dd3333",
+    "navigationBarTitleText": "为高考加分",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#dd3333",
+    "borderStyle": "white",
+    "list":[
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程中心",
+        "iconPath": "image/course.png",
+        "selectedIconPath": "image/courseactive.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text":"个人中心",
+        "iconPath": "image/personal.png",
+        "selectedIconPath": "image/personalactive.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": ["audio", "location"],
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

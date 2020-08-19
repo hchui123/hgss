@@ -1,0 +1,12 @@
+<!--pages/record/record.wxml-->
+<view class="cu-timeline margin-top-sm">
+<block wx:for="{{recordList}}" wx:key="record">
+  <view class="cu-time">{{item.time}}</view>
+  <view class="cu-item">
+    <view class="content">
+      {{item.title}}
+    </view>
+  </view>
+</block>
+</view>
+

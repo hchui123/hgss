@@ -1,0 +1,46 @@
+<!--轮播图-->
+<view style="height:520rpx;">
+  <view class="cu-bar bg-white">
+    <view class="action">
+      <text class="cuIcon-title text-pink"></text> 资讯
+    </view>
+  </view>
+  <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key="swiper" class="{{cardCur==index?'cur':''}}">
+      <navigator class="swiper-item" hover-class="none" url="../article/article?index={{index}}">
+        <image src="{{item.url}}" mode="aspectFill"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>  
+</view>
+
+<!-- 距离高考剩余时间 -->
+<view class="padding-tb bg-white text-center">
+  <text>距离2021年6月7日高考还剩：</text>
+  <text class="text-red text-lg">{{countTime}}</text>
+</view>
+
+<!-- 知识区（grid 组件） -->
+<gridList gridTitle="高中英语" gridList="{{enlishList}}"></gridList>
+
+<!-- 作业区 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 今日练习
+  </view>
+</view>
+<view class="cu-list menu card-menu margin-tb">
+  <view class="cu-item arrow" bindtap="isLogin">
+    <view class="content">
+      <text class="cuIcon-write text-green"></text>
+      <text class="text-grey">生物练习</text>
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="text-center margin-bottom padding-bottom text-gray">
+  <text>
+    ---------- 我是有底线的 ----------
+  </text>
+</view>

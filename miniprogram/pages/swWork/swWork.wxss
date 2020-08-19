@@ -1,0 +1,7 @@
+/* pages/swWork/swWork.wxss */
+.container{
+  position: absolute;
+  top:90rpx;
+  left:0;
+  right:0;
+}

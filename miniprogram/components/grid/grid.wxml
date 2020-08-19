@@ -1,0 +1,15 @@
+<!--宫格列表组件 （多次调用）-->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> {{gridTitle}}
+  </view>
+</view>
+
+<view class="cu-list grid col-3">
+  <view class="cu-item" wx:for="{{gridList}}" wx:key="grid">
+   <navigator hover-class="none" url="../list/list?tag={{item.tag}}&name={{item.name}}&collection={{item.collection}}">
+    <view class="iconfont icon-{{item.icon}} text-{{item.color}}" style="font-size:48rpx;"></view>
+    <text>{{item.name}}</text>
+  </navigator>
+  </view>
+</view>

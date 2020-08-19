@@ -1,0 +1,31 @@
+/* pages/detail/detail.wxss */
+page{
+  background-color: #000;
+  color:#fff;
+}
+.controller{
+  position: absolute;
+  bottom:8%;
+  left:0;
+  right:0;
+  font-size: 56rpx;
+}
+.container{
+  position: absolute;
+  height:80%;
+}
+.content{
+  position: relative;
+  top:50%;
+  color:#666
+}
+.lyric{
+  min-height: 300rpx;
+}
+.addColor{
+  font-size:36rpx;
+  color:#fff;
+}
+.cont{
+  font-size: 64rpx;
+}

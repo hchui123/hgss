@@ -1,0 +1,11 @@
+
+
+ <view class="cu-list menu sm-border card-menu margin-top {{toggleDelay?'animation-slide-bottom':''}}" style="animation-delay: {{(index+1)*0.1}}s;"
+ wx:for="{{nameList}}" wx:key="name">
+     <view class="cu-item arrow">
+       <navigator class="content" hover-class="none" url="../detail/detail?index={{index}}&tag={{item.tag}}&title={{item.title}}">
+         <text class="cuIcon-musicfill text-orange margin-right"></text>
+         <text class="text-grey">{{item.title}}</text>
+       </navigator>
+     </view>
+ </view>
